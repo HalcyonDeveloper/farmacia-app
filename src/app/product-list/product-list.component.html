@@ -1,0 +1,21 @@
+<h2>Productos disponibles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Requiere receta</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.id_Product}}</td>
+      <td>{{product.name_Product}}</td>
+      <td>{{product.needRecepy ? 'Sí' : 'No'}}</td>
+      <td>{{product.price | currency}}</td>
+      <td>{{product.quantity}}</td>
+    </tr>
+  </tbody>
+</table>

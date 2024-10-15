@@ -1,0 +1,16 @@
+<h2>Búsqueda de recetas</h2>
+<input [(ngModel)]="searchTerm" placeholder="Número de receta">
+<button (click)="searchRecepi()">Buscar</button>
+
+<div *ngIf="foundRecepi">
+  <h3>Receta encontrada</h3>
+  <p>Número: {{foundRecepi?.numberRecepi}}</p>
+  <p>Doctor: {{foundRecepi?.nameDoctor}}</p>
+  <p>Paciente: {{foundRecepi?.namePaciente}}</p>
+  <p>Producto ID: {{foundRecepi?.id_Product}}</p>
+  <p>Cantidad: {{foundRecepi?.quantity}}</p>
+  <p>Fecha de entrega: {{foundRecepi?.date_delivery | date:'short'}}</p>
+  <button (click)="deliverMedicine()" [disabled]="foundRecepi?.date_delivery">Entregar medicamento</button>
+</div>
+
+<p>{{message}}</p>
